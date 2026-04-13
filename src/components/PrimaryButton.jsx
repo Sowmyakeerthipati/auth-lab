@@ -61,7 +61,11 @@ export function PrimaryButton({
       aria-busy={isLoading}
     >
       {isLoading ? <Spinner /> : null}
-      <span className={isLoading ? "sr-only" : undefined}>{label}</span>
+      <span className={isLoading ? "sr-only" : undefined}>
+        {label && String(label).trim() ? label : "Button"}
+      </span>
+ 
     </button>
   );
 }
+export default PrimaryButton;  
